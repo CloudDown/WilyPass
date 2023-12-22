@@ -29,7 +29,7 @@ print("\033[0;35m",aski,"\033[0;31m")
 
 test=0
 #lists
-dico={"a":"@","e":"3","i":"1","l":"1","o":"0"}
+dico={"a":"@","a":"4","e":"3","i":"1","l":"1","o":"0"}
 
 spicy=['', '!', '@', '/#', '$', '!@', '!@#', '!@#$', '123!', '!123', '1@']
 
@@ -56,9 +56,25 @@ long_m=len(mot)
 
 
 #var change
+#fonction
+mod_prefix="X"
+mod_number="X"
+mod_spicy="X"
+def table_mod(a,b,c):
+    print("\033[0;36m")
+    print("Mods :")
+    print("|")
+    print("-- Prefix ["+a+"]")
+    print("|")
+    print("-- Number ["+b+"]")
+    print("|")
+    print("-- Strange ["+c+"]")
+    print("\033[0;31m")
+
 
 key=mot
 long_k=long_m
+table_mod(mod_prefix,mod_number,mod_spicy)
 print("")
 if "y" in input("prefix list ? (Y/N) : "):
     print("")
@@ -82,12 +98,20 @@ if "y" in input("prefix list ? (Y/N) : "):
     long_p=len(pref)      
     key+=pref
     long_k+=long_p
+    mod_prefix="✔"
+clear()
+print("\033[0;35m",aski,"\033[0;36m")
+table_mod(mod_prefix,mod_number,mod_spicy)
 print("")
 if "y" in input("number list ? (Y/N) : "):
     print("")
     lim_num=int(input("number max : "))
     key+=[str(c) for c in range(lim_num)]
     long_k+=lim_num
+    mod_number="✔"
+clear()
+print("\033[0;35m",aski,"\033[0;36m")
+table_mod(mod_prefix,mod_number,mod_spicy)
 print("")
 if "y" in input("strange char ? (Y/N) : "):
     for elt in range(long_m):
@@ -105,8 +129,14 @@ if "y" in input("strange char ? (Y/N) : "):
     long_s=len(spicy)
     key+=spicy
     long_k+=long_s
+    mod_spicy="✔"
+clear()
+print("\033[0;35m",aski,"\033[0;36m")
+table_mod(mod_prefix,mod_number,mod_spicy)
 print("")
 long_max=long_k**3
+
+time.sleep(3)
 
 #fonction
 def interface(p,n,s):
@@ -146,6 +176,8 @@ print("\033[0;35m",aski,"\033[0;36m")
 print("")
 print("\033[0;33m",str(int(time_save))+"s","\033[0;36m")
 print("")
+print(save)
+print("")
 charge_bar(charge)
 print("")
 print("\033[0;32m","SUCCESS !!\n","\033[0;36m")
@@ -153,14 +185,16 @@ print("\033[0;32m","SUCCESS !!\n","\033[0;36m")
 txt_name=input("name of your txt file (The file name must not already exist)  : ")
 
 if platform == "linux" or platform == "linux2":
-        with open(txt_name+"txt","w") as fichier:
+        with open(txt_name+".txt","w") as fichier:
             for elt in l:
                 fichier.write(elt+"\n")
 else:
-    with open(txt_name+"txt","w") as fichier:
+    way=os.path.dirname(os.path.abspath(__file__))
+    with open(way+chr(92)+txt_name+".txt","w") as fichier:
         for elt in l:
             fichier.write(elt+"\n")
-print("\033[0;32m","Verify if aword exist in this list !")
+print("")
+print("\033[0;32m","Verify if a word exist in this list !")
 print("")
 print("(exit) for finish the process \n","\033[0;36m")
 a=""
