@@ -4,11 +4,6 @@
 <img align="center" width="60%" alt="Wilypass Terminal" src="https://i.imgur.com/RnzQ2PI.png"/>
 ## 🍕 Mods :
 
-### Prefix
-### Numbers 
-### Strange
-### Charge Bar
-
 ## 🛠️ Installation
 
 ```bash
