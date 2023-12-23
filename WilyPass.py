@@ -2,6 +2,7 @@ import os
 from sys import platform
 from datetime import datetime
 import time
+d=datetime.now()
 
 if platform == "linux" or platform == "linux2":
     def clear():
@@ -31,11 +32,8 @@ test=0
 #lists
 dico={"a":"@","a":"4","e":"3","i":"1","l":"1","o":"0"}
 
-spicy=['', '!', '@', '/#', '$', '!@', '!@#', '!@#$', '123!', '!123', '1@']
+spicy=['', '!', '@', '/#', '$', '!@', '!@#', '!@#$', '123!', '!123', '1@']+[d.strftime("%A"),d.strftime("%Y")]
 
-d=datetime.now()
-spicy.append(d.strftime("%A"))
-spicy.append(d.strftime("%Y"))
 
 mot=(input("KEYWORDS (espace-their by a , ) : ")).lower().split(",")
 save=mot[:]
@@ -60,7 +58,8 @@ long_m=len(mot)
 mod_prefix="X"
 mod_number="X"
 mod_spicy="X"
-def table_mod(a,b,c):
+mod_charge="X"
+def table_mod(a,b,c,d):
     print("\033[0;36m")
     print("Mods :")
     print("|")
@@ -69,13 +68,16 @@ def table_mod(a,b,c):
     print("-- Number ["+b+"]")
     print("|")
     print("-- Strange ["+c+"]")
+    print("|")
+    print("-- Charge Bar ["+d+"]")
     print("\033[0;31m")
 
 
 key=mot
 long_k=long_m
-table_mod(mod_prefix,mod_number,mod_spicy)
+table_mod(mod_prefix,mod_number,mod_spicy,mod_charge)
 print("")
+time.sleep(0.5)
 if "y" in input("prefix list ? (Y/N) : "):
     print("")
     prefixe=int(input("prefix weight (1,2,3...) : "))
@@ -101,8 +103,9 @@ if "y" in input("prefix list ? (Y/N) : "):
     mod_prefix="✔"
 clear()
 print("\033[0;35m",aski,"\033[0;36m")
-table_mod(mod_prefix,mod_number,mod_spicy)
+table_mod(mod_prefix,mod_number,mod_spicy,mod_charge)
 print("")
+time.sleep(0.5)
 if "y" in input("number list ? (Y/N) : "):
     print("")
     lim_num=int(input("number max : "))
@@ -111,8 +114,9 @@ if "y" in input("number list ? (Y/N) : "):
     mod_number="✔"
 clear()
 print("\033[0;35m",aski,"\033[0;36m")
-table_mod(mod_prefix,mod_number,mod_spicy)
+table_mod(mod_prefix,mod_number,mod_spicy,mod_charge)
 print("")
+time.sleep(0.5)
 if "y" in input("strange char ? (Y/N) : "):
     for elt in range(long_m):
         for ltr in range(len(mot[elt])):
@@ -130,13 +134,25 @@ if "y" in input("strange char ? (Y/N) : "):
     key+=spicy
     long_k+=long_s
     mod_spicy="✔"
+
 clear()
 print("\033[0;35m",aski,"\033[0;36m")
-table_mod(mod_prefix,mod_number,mod_spicy)
+table_mod(mod_prefix,mod_number,mod_spicy,mod_charge)
 print("")
-long_max=long_k**3
+time.sleep(0.5)
+if "y" in input("Show Charge-Bar ? (Y/N) Better performence if this one is disable : "):
+    show_chargebar=True
+    mod_charge="✔"
+else:
+    show_chargebar=False
 
-time.sleep(3)
+clear()
+print("\033[0;35m",aski,"\033[0;36m")
+table_mod(mod_prefix,mod_number,mod_spicy,mod_charge)
+print("")
+time.sleep(1)
+
+long_max=long_k**3
 
 #fonction
 def interface(p,n,s):
@@ -151,18 +167,25 @@ def charge_bar(c,longueur=long_max):
 time_save=int(time.time())
 charge=0
 l=[]
-if long_max<50000000:
+
+if show_chargebar:
+    if long_max<50000000:
+        for char in range(long_k):
+            charge+=long_k**2
+            clear()
+            charge_bar(charge)
+            for i in range(long_k):
+                for j in range(long_k):
+                    l.append(key[char]+key[i]+key[j])
+    else: #opti
+        for char in range(long_k):
+            charge+=long_k**2
+            charge_bar(charge)
+            for i in range(long_k):
+                for j in range(long_k):
+                    l.append(key[char]+key[i]+key[j])
+else:
     for char in range(long_k):
-        charge+=long_k**2
-        clear()
-        charge_bar(charge)
-        for i in range(long_k):
-            for j in range(long_k):
-                l.append(key[char]+key[i]+key[j])
-else: #opti
-    for char in range(long_k):
-        charge+=long_k**2
-        charge_bar(charge)
         for i in range(long_k):
             for j in range(long_k):
                 l.append(key[char]+key[i]+key[j])
@@ -178,7 +201,7 @@ print("\033[0;33m",str(int(time_save))+"s","\033[0;36m")
 print("")
 print(save)
 print("")
-charge_bar(charge)
+charge_bar(long_max)
 print("")
 print("\033[0;32m","SUCCESS !!\n","\033[0;36m")
 
