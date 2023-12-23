@@ -32,7 +32,7 @@ test=0
 #lists
 dico={"a":"@","a":"4","e":"3","i":"1","l":"1","o":"0"}
 
-spicy=['', '!', '@', '/#', '$', '!@', '!@#', '!@#$', '123!', '!123', '1@']+[d.strftime("%A"),d.strftime("%Y")]
+spicy=['', '!', '@', '/#', '$', '!@', '!@#', '!@#$', '123!', '!123', '1@',d.strftime("%A"),d.strftime("%Y")]
 
 
 mot=(input("KEYWORDS (espace-their by a , ) : ")).lower().split(",")
