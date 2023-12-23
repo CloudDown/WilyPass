@@ -1,4 +1,4 @@
 # WilyPass
  Password Lists creator From Keyword
 
- <img align="center" width="60%" alt="Crosshair in game" src="https://imgur.com/a/ZaH6SvX)"/>
+ <img align="center" width="60%" alt="Wilypass Terminal" src="https://i.imgur.com/RnzQ2PI.png"/>
