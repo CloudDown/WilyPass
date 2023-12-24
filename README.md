@@ -10,9 +10,8 @@ git clone https://github.com/CloudDown/WilyPass.git
 cd WilyPass/
 python3 wilypass.py
 ```
-
-
-
+|
+|
 
 ## 🍕 Mods :
 
