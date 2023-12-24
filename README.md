@@ -35,5 +35,5 @@ Add popular Strange char to the algorythm
 ### Charge-Bar :
 just for see the advencement of creation of passwords :
 
-{\color{red}Red}
+## $${\boxed{\color{#55AC4C} \sf{[############################################################################........................] 76% ( 76/100 words )} }}$$ 
 
