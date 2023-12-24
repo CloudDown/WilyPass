@@ -1,6 +1,6 @@
 # WilyPass - Ultimate Password List Creator
 
-![WilyPass Terminal](https://i.imgur.com/RnzQ2PI.png)
+<img align="center" width="60%" alt="Wilypass Terminal" src="https://i.imgur.com/RnzQ2PI.png"/>
 
 ## Introduction
 
