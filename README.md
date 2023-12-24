@@ -8,12 +8,12 @@ WilyPass is a powerful password list creator designed for Linux and Windows user
 
 ## Features
 
-- **Cross-Platform Compatibility**: Supports both Linux and Windows environments.
-- **Variant Creation**: Generates a wide range of password variants for enhanced security.
-- **Dynamic Prefixing**: Incorporates dynamic prefixing based on user-defined weights and complexity levels.
-- **Number Lists**: Includes numerical variations to increase password complexity.
-- **Strange Characters**: Integrates popular special characters for added strength.
-- **Charge-Bar Visualization**: Displays a progress bar for password list creation.
+- **Cross-Platform Compatibility** : Supports both Linux and Windows environments.
+- **Variant Creation** : Generates a wide range of password variants for enhanced security.
+- **Dynamic Prefixing** : Incorporates dynamic prefixing based on user-defined weights and complexity levels.
+- **Number Lists** : Includes numerical variations to increase password complexity.
+- **Strange Characters** : Integrates popular special characters for added strength.
+- **Charge-Bar Visualization** : Displays a progress bar for password list creation.
 
 ## 🛠️ Installation
 
