@@ -17,8 +17,7 @@ python3 wilypass.py
 ## 🍕 Mods :
 
 ### Prefix :
-This feature takes the first 1, 2, 3... letters of your keyword and adds them to the search. For example, if your keyword is "John," you could add :
-
+This feature takes the first 1, 2, 3... letters of your keyword and adds them to the search. For example, if your keyword is 'John' and you choose a prefix of three letters, the list added to the algorithm will be :
 ```python
 ['j', 'jo','joh']
 ```
