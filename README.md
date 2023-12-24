@@ -1,5 +1,5 @@
 # WilyPass
- Password Lists creator From Keyword
+WilyPass is a password list creator based on keywords.
 
 <img align="center" width="60%" alt="Wilypass Terminal" src="https://i.imgur.com/RnzQ2PI.png"/>
 
@@ -17,27 +17,26 @@ python3 wilypass.py
 ## 🍕 Mods :
 
 ### Prefix :
-This one take the 1,2,3... first letters of yours keyword and add it into the search
-For Exemple if my keywords is "John" i could add
+This feature takes the first 1, 2, 3... letters of your keyword and adds them to the search. For example, if your keyword is "John," you could add :
 
 ```python
 ['j', 'jo','joh']
 ```
 
 ### Number :
-Add a lists of numbers into the algorythm, for exemple a choose a limit of 10 num:
+Add a list of numbers to the algorithm. For example, choose a limit of 10 numbers :
 ```python
 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 ```
 
 ### Strange :
-Add popular Strange char to the algorythm
+Incorporate popular special characters into the algorithm :
 ```python
 ['', '!', '@', '/#', '$', '!@', '!@#', '!@#$', '123!', '!123', '1@']
 ```
 
 ### Charge-Bar :
-just for see the advencement of creation of passwords :
+Simply to visualize the progress of password creation :
 ```
 [############################################################################........................] 76% ( 76/100 words )
 ```
