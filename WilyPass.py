@@ -35,7 +35,10 @@ dico={"a":"@","a":"4","e":"3","i":"1","l":"1","o":"0"}
 spicy=['', '!', '@', '/#', '$', '!@', '!@#', '!@#$', '123!', '!123', '1@',d.strftime("%A"),d.strftime("%Y")]
 
 
-mot=(input("KEYWORDS (espace-their by a , ) : ")).lower().split(",")
+mot=(input("KEYWORDS (espace-their by a , ) : ")).split(",")
+for elt in mot:
+    if elt != elt.lower():
+        mot.append(elt.lower())
 save=mot[:]
 pref=[]
 
@@ -48,7 +51,6 @@ for char in range(long_p):
     for i in range(long_p):
         for j in range(long_p):
             pref.append(pref[char]+pref[i]+pref[j])
-
 #SPICY
 long_m=len(mot)
 
@@ -176,19 +178,22 @@ if show_chargebar:
             charge_bar(charge)
             for i in range(long_k):
                 for j in range(long_k):
-                    l.append(key[char]+key[i]+key[j])
+                    if key[char] != key[i] != key[j]:
+                        l.append(key[char]+key[i]+key[j])
     else: #opti
         for char in range(long_k):
             charge+=long_k**2
             charge_bar(charge)
             for i in range(long_k):
                 for j in range(long_k):
-                    l.append(key[char]+key[i]+key[j])
+                    if key[char] != key[i] != key[j]:
+                        l.append(key[char]+key[i]+key[j])
 else:
     for char in range(long_k):
         for i in range(long_k):
             for j in range(long_k):
-                l.append(key[char]+key[i]+key[j])
+                if key[char] != key[i] != key[j]:
+                    l.append(key[char]+key[i]+key[j])
                 
 clear()
 
