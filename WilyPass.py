@@ -224,7 +224,7 @@ else:
 print("")
 print("\033[0;32m","Verify if a word exist in this list !")
 print("")
-print("(exit) for finish the process \n","\033[0;36m")
+print("\033[0;31m","(exit) for finish the process \n","\033[0;36m")
 a=""
 while a !="exit":
     a=input("search word : ")
